@@ -3,14 +3,14 @@ import XCTest
 
 final class NavigationTaskTests: XCTestCase {
     func test_init() {
-        let sut = NavigationTask()
+        let sut = NavigationTask(animated: true)
 
         XCTAssertFalse(sut.opExecuting)
         XCTAssertFalse(sut.opFinished)
     }
 
     func test_startMethodCall() {
-        let sut = NavigationTask()
+        let sut = NavigationTask(animated: true)
 
         sut.start()
 
@@ -27,7 +27,7 @@ final class NavigationTaskTests: XCTestCase {
     }
 
     func test_startMethodCall_onCancelledTask() {
-        let sut = NavigationTask()
+        let sut = NavigationTask(animated: true)
 
         sut.cancel()
         sut.start()

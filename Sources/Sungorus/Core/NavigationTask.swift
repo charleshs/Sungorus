@@ -4,6 +4,8 @@ open class NavigationTask: Operation {
     open override var isExecuting: Bool { opExecuting }
     open override var isFinished: Bool { opFinished }
 
+    public var animated: Bool
+
     var opExecuting: Bool {
         willSet {
             willChangeValue(for: \.isExecuting)
@@ -22,9 +24,10 @@ open class NavigationTask: Operation {
         }
     }
 
-    public override init() {
+    public init(animated: Bool) {
         self.opExecuting = false
         self.opFinished = false
+        self.animated = animated
         super.init()
     }
 

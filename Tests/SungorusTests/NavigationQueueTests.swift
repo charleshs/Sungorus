@@ -57,7 +57,7 @@ final class NavigationQueueTests: XCTestCase {
 private class NavigationTaskMock: NavigationTask {
     init(onExecuting: @escaping () -> Void = { }) {
         self.onExecuteNavigationMethodCalled = onExecuting
-        super.init()
+        super.init(animated: true)
     }
 
     var onExecuteNavigationMethodCalled: (() -> Void)?
