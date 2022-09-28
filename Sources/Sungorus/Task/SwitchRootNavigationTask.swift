@@ -3,16 +3,20 @@ import UIKit
 open class SwitchRootNavigationTask: NavigationTask {
     public let window: UIWindow
     public let viewController: UIViewController
-    public var animationDuration: TimeInterval = 0.5
-    public var animationOptions: UIView.AnimationOptions = .transitionFlipFromRight
+    public var animationDuration: TimeInterval
+    public var animationOptions: UIView.AnimationOptions
 
     public init(
         window: UIWindow,
         viewController: UIViewController,
-        animated: Bool
+        animated: Bool,
+        animationDuration: TimeInterval,
+        animationOptions: UIView.AnimationOptions
     ) {
         self.window = window
         self.viewController = viewController
+        self.animationDuration = animationDuration
+        self.animationOptions = animationOptions
         super.init(animated: animated)
     }
 

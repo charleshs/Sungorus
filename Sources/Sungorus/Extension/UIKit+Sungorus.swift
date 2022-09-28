@@ -13,11 +13,17 @@ public extension UIWindow {
         to viewController: UIViewController,
         animated: Bool,
         duration: TimeInterval = 0.5,
-        options: UIView.AnimationOptions? = nil
+        options: UIView.AnimationOptions = .transitionCrossDissolve
     ) -> NavigationTask {
-        let task = SwitchRootNavigationTask(window: self, viewController: viewController, animated: true)
+        let task = SwitchRootNavigationTask(
+            window: self,
+            viewController: viewController,
+            animated: true,
+            animationDuration: duration,
+            animationOptions: options
+        )
         task.animationDuration = duration
-        options.map { task.animationOptions = $0 }
+        task.animationOptions = options
         return sgrEnqueueTask(task)
     }
 }
