@@ -13,14 +13,14 @@ final class HomeListAdapter: ListAdapter<ListSection, HomeListAdapter.Item> {
     override func makeDataSource(for collectionView: UICollectionView) -> DataSource {
         collectionView.register(UICollectionViewListCell.self, forCellWithReuseIdentifier: Self.listCellId)
 
-        return DataSource(collectionView: collectionView) { collectionView, indexPath, itemIdentifier in
+        return DataSource(collectionView: collectionView) { collectionView, indexPath, item in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Self.listCellId, for: indexPath)
 
             if let listCell = cell as? UICollectionViewListCell {
                 var configuration = UIListContentConfiguration.cell()
-                configuration.text = itemIdentifier.title
+                configuration.text = item.title
                 listCell.contentConfiguration = configuration
-                listCell.accessories = [.disclosureIndicator(displayed: .always)]
+                listCell.accessories = item.allowsSelection ? [.disclosureIndicator(displayed: .always)] : []
             }
 
             return cell
@@ -38,6 +38,15 @@ extension HomeListAdapter {
         ) {
             self.title = title
             super.init(onSelected: onSelected)
+        }
+
+        convenience init(
+            title: String,
+            allowsSelection: Bool,
+            onSelected: (() -> Void)? = nil
+        ) {
+            self.init(title: title, onSelected: onSelected)
+            self.allowsSelection = allowsSelection
         }
     }
 }

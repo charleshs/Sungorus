@@ -10,6 +10,8 @@
 		7CA703D928E496A000AF3DFE /* SwitchRootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA703D728E496A000AF3DFE /* SwitchRootController.swift */; };
 		7CA703DA28E496A000AF3DFE /* SwitchRootController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA703D828E496A000AF3DFE /* SwitchRootController.xib */; };
 		7CA703DD28E4A3E500AF3DFE /* ListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA703DC28E4A3E500AF3DFE /* ListAdapter.swift */; };
+		7CA703DF28E4C1BB00AF3DFE /* ListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA703DE28E4C1BB00AF3DFE /* ListSection.swift */; };
+		7CA703E128E4C1C500AF3DFE /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA703E028E4C1C500AF3DFE /* ListItem.swift */; };
 		7CDF4FE528E4303900923715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDF4FE428E4303900923715 /* AppDelegate.swift */; };
 		7CDF4FE728E4303900923715 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDF4FE628E4303900923715 /* SceneDelegate.swift */; };
 		7CDF4FE928E4303900923715 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDF4FE828E4303900923715 /* HomeController.swift */; };
@@ -27,6 +29,8 @@
 		7CA703D728E496A000AF3DFE /* SwitchRootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchRootController.swift; sourceTree = "<group>"; };
 		7CA703D828E496A000AF3DFE /* SwitchRootController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchRootController.xib; sourceTree = "<group>"; };
 		7CA703DC28E4A3E500AF3DFE /* ListAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAdapter.swift; sourceTree = "<group>"; };
+		7CA703DE28E4C1BB00AF3DFE /* ListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSection.swift; sourceTree = "<group>"; };
+		7CA703E028E4C1C500AF3DFE /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		7CDF4FE128E4303900923715 /* Sungorus-demo-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sungorus-demo-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CDF4FE428E4303900923715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CDF4FE628E4303900923715 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,12 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7CA703DB28E4A3CA00AF3DFE /* BaseType */ = {
+		7CA703DB28E4A3CA00AF3DFE /* List */ = {
 			isa = PBXGroup;
 			children = (
 				7CA703DC28E4A3E500AF3DFE /* ListAdapter.swift */,
+				7CA703E028E4C1C500AF3DFE /* ListItem.swift */,
+				7CA703DE28E4C1BB00AF3DFE /* ListSection.swift */,
 			);
-			path = BaseType;
+			path = List;
 			sourceTree = "<group>";
 		};
 		7CDF4FD828E4303900923715 = {
@@ -83,11 +89,11 @@
 		7CDF4FE328E4303900923715 /* Sungorus-demo */ = {
 			isa = PBXGroup;
 			children = (
-				7CA703DB28E4A3CA00AF3DFE /* BaseType */,
 				7CDF4FF228E4303C00923715 /* Info.plist */,
 				7CDF500528E440CF00923715 /* Controller.swift */,
 				7CDF500828E44C3300923715 /* Extensions.swift */,
 				7CDF4FF928E430E900923715 /* Application */,
+				7CA703DB28E4A3CA00AF3DFE /* List */,
 				7CDF4FFB28E4313400923715 /* Main */,
 				7CDF4FF828E430CE00923715 /* Resources */,
 			);
@@ -219,11 +225,13 @@
 				7CDF500428E4402500923715 /* DetailController.swift in Sources */,
 				7CDF500628E440CF00923715 /* Controller.swift in Sources */,
 				7CDF4FE528E4303900923715 /* AppDelegate.swift in Sources */,
+				7CA703E128E4C1C500AF3DFE /* ListItem.swift in Sources */,
 				7CDF4FFD28E4375400923715 /* HomeListAdapter.swift in Sources */,
 				7CDF4FE728E4303900923715 /* SceneDelegate.swift in Sources */,
 				7CDF500928E44C3300923715 /* Extensions.swift in Sources */,
 				7CA703D928E496A000AF3DFE /* SwitchRootController.swift in Sources */,
 				7CA703DD28E4A3E500AF3DFE /* ListAdapter.swift in Sources */,
+				7CA703DF28E4C1BB00AF3DFE /* ListSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

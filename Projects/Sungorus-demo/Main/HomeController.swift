@@ -34,6 +34,7 @@ final class HomeController: Controller {
     private func populateTableView() {
         var snapshot = Snapshot(sections: Section())
         snapshot.appendItems([
+            Item(title: "Row cannot be selected", allowsSelection: false),
             Item(title: "Switch Window's Root", onSelected: {
                 let switchRootController = SwitchRootController()
                 let keyWindow = UIApplication.shared.getKeyWindow()

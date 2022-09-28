@@ -1,6 +1,5 @@
 import UIKit
 
-
 @discardableResult
 public func sgrEnqueueTask(_ task: NavigationTask, queue: NavigationQueue = .main) -> NavigationTask {
     queue.add(task)
