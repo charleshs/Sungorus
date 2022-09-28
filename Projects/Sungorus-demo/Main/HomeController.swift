@@ -32,6 +32,10 @@ final class HomeController: Controller {
     private func populateTableView() {
         var snapshot = Snapshot(sections: Section(id: 0))
         snapshot.appendItems([
+            Item(id: -1, title: "Switch Window's Root", onSelect: {
+                let switchRootController = SwitchRootController()
+                UIApplication.shared.getKeyWindow()?.sgrEnqueueSwitchRoot(to: switchRootController, animated: true)
+            }),
             Item(id: 0, title: "Present and Dismiss", onSelect: { [weak self] in
                 let detailController = DetailController(color: .yellow)
 
