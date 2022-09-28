@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		7CA703D928E496A000AF3DFE /* SwitchRootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA703D728E496A000AF3DFE /* SwitchRootController.swift */; };
 		7CA703DA28E496A000AF3DFE /* SwitchRootController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA703D828E496A000AF3DFE /* SwitchRootController.xib */; };
+		7CA703DD28E4A3E500AF3DFE /* ListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA703DC28E4A3E500AF3DFE /* ListAdapter.swift */; };
 		7CDF4FE528E4303900923715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDF4FE428E4303900923715 /* AppDelegate.swift */; };
 		7CDF4FE728E4303900923715 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDF4FE628E4303900923715 /* SceneDelegate.swift */; };
 		7CDF4FE928E4303900923715 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDF4FE828E4303900923715 /* HomeController.swift */; };
 		7CDF4FEC28E4303900923715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF4FEA28E4303900923715 /* Main.storyboard */; };
 		7CDF4FEE28E4303C00923715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF4FED28E4303C00923715 /* Assets.xcassets */; };
 		7CDF4FF128E4303C00923715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF4FEF28E4303C00923715 /* LaunchScreen.storyboard */; };
-		7CDF4FFD28E4375400923715 /* HomeDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDF4FFC28E4375400923715 /* HomeDataAdapter.swift */; };
+		7CDF4FFD28E4375400923715 /* HomeListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDF4FFC28E4375400923715 /* HomeListAdapter.swift */; };
 		7CDF500228E43FC300923715 /* Sungorus in Frameworks */ = {isa = PBXBuildFile; productRef = 7CDF500128E43FC300923715 /* Sungorus */; };
 		7CDF500428E4402500923715 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDF500328E4402500923715 /* DetailController.swift */; };
 		7CDF500628E440CF00923715 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDF500528E440CF00923715 /* Controller.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		7CA703D728E496A000AF3DFE /* SwitchRootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchRootController.swift; sourceTree = "<group>"; };
 		7CA703D828E496A000AF3DFE /* SwitchRootController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchRootController.xib; sourceTree = "<group>"; };
+		7CA703DC28E4A3E500AF3DFE /* ListAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAdapter.swift; sourceTree = "<group>"; };
 		7CDF4FE128E4303900923715 /* Sungorus-demo-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sungorus-demo-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CDF4FE428E4303900923715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CDF4FE628E4303900923715 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,7 +35,7 @@
 		7CDF4FED28E4303C00923715 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CDF4FF028E4303C00923715 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CDF4FF228E4303C00923715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7CDF4FFC28E4375400923715 /* HomeDataAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataAdapter.swift; sourceTree = "<group>"; };
+		7CDF4FFC28E4375400923715 /* HomeListAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListAdapter.swift; sourceTree = "<group>"; };
 		7CDF4FFF28E43FBB00923715 /* Sungorus */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Sungorus; path = ..; sourceTree = "<group>"; };
 		7CDF500328E4402500923715 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		7CDF500528E440CF00923715 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
@@ -52,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7CA703DB28E4A3CA00AF3DFE /* BaseType */ = {
+			isa = PBXGroup;
+			children = (
+				7CA703DC28E4A3E500AF3DFE /* ListAdapter.swift */,
+			);
+			path = BaseType;
+			sourceTree = "<group>";
+		};
 		7CDF4FD828E4303900923715 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +83,7 @@
 		7CDF4FE328E4303900923715 /* Sungorus-demo */ = {
 			isa = PBXGroup;
 			children = (
+				7CA703DB28E4A3CA00AF3DFE /* BaseType */,
 				7CDF4FF228E4303C00923715 /* Info.plist */,
 				7CDF500528E440CF00923715 /* Controller.swift */,
 				7CDF500828E44C3300923715 /* Extensions.swift */,
@@ -106,7 +117,7 @@
 			children = (
 				7CDF500328E4402500923715 /* DetailController.swift */,
 				7CDF4FE828E4303900923715 /* HomeController.swift */,
-				7CDF4FFC28E4375400923715 /* HomeDataAdapter.swift */,
+				7CDF4FFC28E4375400923715 /* HomeListAdapter.swift */,
 				7CDF4FEA28E4303900923715 /* Main.storyboard */,
 				7CA703D728E496A000AF3DFE /* SwitchRootController.swift */,
 				7CA703D828E496A000AF3DFE /* SwitchRootController.xib */,
@@ -208,10 +219,11 @@
 				7CDF500428E4402500923715 /* DetailController.swift in Sources */,
 				7CDF500628E440CF00923715 /* Controller.swift in Sources */,
 				7CDF4FE528E4303900923715 /* AppDelegate.swift in Sources */,
-				7CDF4FFD28E4375400923715 /* HomeDataAdapter.swift in Sources */,
+				7CDF4FFD28E4375400923715 /* HomeListAdapter.swift in Sources */,
 				7CDF4FE728E4303900923715 /* SceneDelegate.swift in Sources */,
 				7CDF500928E44C3300923715 /* Extensions.swift in Sources */,
 				7CA703D928E496A000AF3DFE /* SwitchRootController.swift in Sources */,
+				7CA703DD28E4A3E500AF3DFE /* ListAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

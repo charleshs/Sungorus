@@ -9,20 +9,22 @@ import Sungorus
 import UIKit
 
 final class HomeController: Controller {
-    typealias DataSource = HomeDataAdapter.DataSource
+    typealias DataSource = HomeListAdapter.DataSource
     typealias Snapshot =  NSDiffableDataSourceSnapshot<Section, Item>
-    typealias Section = HomeDataAdapter.Section
-    typealias Item = HomeDataAdapter.Item
+    typealias Section = ListSection
+    typealias Item = HomeListAdapter.Item
     
-    @IBOutlet private(set) var tableView: UITableView! {
+    @IBOutlet private(set) var collectionView: UICollectionView! {
         didSet {
-            tableView.dataSource = dataSource
-            tableView.delegate = dataAdapter
+            let listLayoutConfiguration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+            collectionView.collectionViewLayout = UICollectionViewCompositionalLayout.list(using: listLayoutConfiguration)
+            collectionView.dataSource = dataSource
+            collectionView.delegate = dataAdapter
         }
     }
 
-    private lazy var dataAdapter = HomeDataAdapter()
-    private lazy var dataSource: DataSource = dataAdapter.makeDataSource(for: tableView)
+    private lazy var dataAdapter = HomeListAdapter()
+    private lazy var dataSource: DataSource = dataAdapter.makeDataSource(for: collectionView)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,25 +32,26 @@ final class HomeController: Controller {
     }
 
     private func populateTableView() {
-        var snapshot = Snapshot(sections: Section(id: 0))
+        var snapshot = Snapshot(sections: Section())
         snapshot.appendItems([
-            Item(id: -1, title: "Switch Window's Root", onSelect: {
+            Item(title: "Switch Window's Root", onSelected: {
                 let switchRootController = SwitchRootController()
-                UIApplication.shared.getKeyWindow()?.sgrEnqueueSwitchRoot(to: switchRootController, animated: true)
+                let keyWindow = UIApplication.shared.getKeyWindow()
+                keyWindow?.sgrEnqueueSwitchRoot(to: switchRootController, animated: true, options: [.transitionCrossDissolve])
             }),
-            Item(id: 0, title: "Present and Dismiss", onSelect: { [weak self] in
+            Item(title: "Present and Dismiss", onSelected: { [weak self] in
                 let detailController = DetailController(color: .yellow)
 
                 self?.sgrEnqueuePresent(detailController, animated: true)
                 self?.sgrEnqueueDismissAsPresenter(animated: true)
             }),
-            Item(id: 1, title: "Push and Pop", onSelect: { [weak self] in
+            Item(title: "Push and Pop", onSelected: { [weak self] in
                 let detailController = DetailController(color: .green)
 
                 self?.navigationController?.sgrEnqueuePush(detailController, animated: true)
                 self?.navigationController?.sgrEnqueuePop(animated: true)
             }),
-            Item(id: 2, title: "Push, Present, Dismiss and Pop", onSelect: { [weak self] in
+            Item(title: "Push, Present, Dismiss and Pop", onSelected: { [weak self] in
                 let pushedController = DetailController(color: .green)
                 let presentedController = DetailController(color: .yellow)
 
@@ -58,6 +61,6 @@ final class HomeController: Controller {
                 self?.navigationController?.sgrEnqueuePop(animated: true)
             }),
         ])
-        dataSource.apply(snapshot, animatingDifferences: true)
+        dataSource.applySnapshotUsingReloadData(snapshot)
     }
 }
