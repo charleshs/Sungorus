@@ -13,7 +13,7 @@ public extension UIWindow {
         to viewController: UIViewController,
         animated: Bool,
         duration: TimeInterval = 0.5,
-        options: UIView.AnimationOptions?
+        options: UIView.AnimationOptions? = nil
     ) -> NavigationTask {
         let task = SwitchRootNavigationTask(window: self, viewController: viewController, animated: true)
         task.animationDuration = duration
