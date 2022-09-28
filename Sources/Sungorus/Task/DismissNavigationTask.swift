@@ -3,19 +3,28 @@ import UIKit
 open class DismissNavigationTask: NavigationTask {
     public let presentationContext: () -> UIViewController?
 
-    public init(presentationContext: @escaping () -> UIViewController?, animated: Bool) {
+    public init(
+        presentationContext: @escaping () -> UIViewController?,
+        animated: Bool
+    ) {
         self.presentationContext = { presentationContext() }
         super.init(animated: animated)
     }
 
-    public convenience init(presentationContext: UIViewController?, animated: Bool) {
+    public convenience init(
+        presentationContext: UIViewController?,
+        animated: Bool
+    ) {
         self.init(
             presentationContext: { presentationContext },
             animated: animated
         )
     }
 
-    public convenience init(presented: UIViewController, animated: Bool) {
+    public convenience init(
+        presented: UIViewController,
+        animated: Bool
+    ) {
         self.init(
             presentationContext: { presented.presentingViewController },
             animated: animated
