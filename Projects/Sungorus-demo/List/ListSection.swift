@@ -19,7 +19,7 @@ open class ListSection: Hashable, ListSectionType {
     public let sectionIdentifier: String
 
     public init(
-        sectionIdentifier: String = UUID().uuidString
+        sectionIdentifier: String
     ) {
         self.sectionIdentifier = sectionIdentifier
     }

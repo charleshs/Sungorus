@@ -37,7 +37,7 @@ extension HomeListAdapter {
             onSelected: (() -> Void)? = nil
         ) {
             self.title = title
-            super.init(onSelected: onSelected)
+            super.init(itemIdentifier: UUID().uuidString, onSelected: onSelected)
         }
 
         convenience init(

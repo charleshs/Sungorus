@@ -32,7 +32,7 @@ final class HomeController: Controller {
     }
 
     private func populateTableView() {
-        var snapshot = Snapshot(sections: Section())
+        var snapshot = Snapshot(sections: Section(sectionIdentifier: UUID().uuidString))
         snapshot.appendItems([
             Item(title: "Row cannot be selected", allowsSelection: false),
             Item(title: "Switch Window's Root", onSelected: {

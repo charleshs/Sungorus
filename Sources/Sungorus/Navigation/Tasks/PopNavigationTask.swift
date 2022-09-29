@@ -15,7 +15,7 @@ open class PopNavigationTask: NavigationTask, StackNavigation {
     }
 
     open override func executeNavigation() {
-        if let destination {
+        if let destination = destination {
             navigationController.popToViewController(destination, animated: animated)
         } else {
             navigationController.popViewController(animated: animated)

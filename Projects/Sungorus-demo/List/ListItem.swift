@@ -22,7 +22,7 @@ open class ListItem: Hashable, ListItemType, ListItemSelectable {
     }
 
     public init(
-        itemIdentifier: String = UUID().uuidString,
+        itemIdentifier: String,
         onSelected: (() -> Void)? = nil
     ) {
         self.itemIdentifier = itemIdentifier
