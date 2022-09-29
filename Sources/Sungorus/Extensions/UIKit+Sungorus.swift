@@ -1,32 +1,5 @@
 import UIKit
 
-@discardableResult
-public func sgrEnqueueTask(_ task: NavigationTask, queue: NavigationQueue = .main) -> NavigationTask {
-    queue.add(task)
-    return task
-}
-
-public extension UIWindow {
-    @discardableResult
-    func sgrEnqueueSwitchRoot(
-        to viewController: UIViewController,
-        animated: Bool,
-        duration: TimeInterval = 0.5,
-        options: UIView.AnimationOptions = .transitionCrossDissolve
-    ) -> NavigationTask {
-        let task = SwitchRootNavigationTask(
-            window: self,
-            viewController: viewController,
-            animated: true,
-            animationDuration: duration,
-            animationOptions: options
-        )
-        task.animationDuration = duration
-        task.animationOptions = options
-        return sgrEnqueueTask(task)
-    }
-}
-
 public extension UIViewController {
     @discardableResult
     func sgrEnqueuePresent(_ presentable: UIViewController, animated: Bool) -> NavigationTask {
@@ -71,4 +44,29 @@ public extension UINavigationController {
         let task = PopToRootNavigationTask(navigationController: self, animated: animated)
         return sgrEnqueueTask(task)
     }
+}
+
+public extension UIWindow {
+    @discardableResult
+    func sgrEnqueueSwitchRoot(
+        to viewController: UIViewController,
+        animated: Bool,
+        duration: TimeInterval = 0.5,
+        options: UIView.AnimationOptions = .transitionCrossDissolve
+    ) -> NavigationTask {
+        let task = SwitchRootNavigationTask(
+            window: self,
+            viewController: viewController,
+            animated: true,
+            animationDuration: duration,
+            animationOptions: options
+        )
+        return sgrEnqueueTask(task)
+    }
+}
+
+@discardableResult
+private func sgrEnqueueTask(_ task: NavigationTask, queue: NavigationQueue = .main) -> NavigationTask {
+    queue.add(task)
+    return task
 }

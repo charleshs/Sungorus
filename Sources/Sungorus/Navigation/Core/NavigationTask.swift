@@ -1,8 +1,8 @@
 import Foundation
 
 open class NavigationTask: Operation {
-    open override var isExecuting: Bool { opExecuting }
-    open override var isFinished: Bool { opFinished }
+    public override var isExecuting: Bool { opExecuting }
+    public override var isFinished: Bool { opFinished }
 
     public var animated: Bool
 
@@ -31,7 +31,12 @@ open class NavigationTask: Operation {
         super.init()
     }
 
-    open override func start() {
+    open func executeNavigation() {
+        // This method is meant to be overridden by subclasses.
+        finish()
+    }
+
+    public override func start() {
         if isCancelled {
             opFinished = true
             return
@@ -42,11 +47,6 @@ open class NavigationTask: Operation {
         DispatchQueue.main.async {
             self.executeNavigation()
         }
-    }
-
-    open func executeNavigation() {
-        // This method is meant to be overridden by subclasses.
-        finish()
     }
 
     public func finish() {
